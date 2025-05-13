@@ -84,7 +84,7 @@ Given historical **daily stock data** for Tesla, forecast the **closing price fo
 
 
 
-
+---
 
 ## 📈 Results Summary
 
