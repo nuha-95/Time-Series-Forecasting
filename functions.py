@@ -219,3 +219,58 @@ def plot_model_comparison(results):
         plt.tight_layout()
         plt.show()
 
+###
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM, GRU, Dropout
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
+
+# function to prepare data for sequence models (LSTM, GRU)
+def create_sequences(X, y, time_steps=1):
+    """
+    Create sequences of time_steps for sequence models like LSTM and GRU
+    """
+    X_seq, y_seq = [], []
+    for i in range(len(X) - time_steps):
+        X_seq.append(X[i:i + time_steps])
+        y_seq.append(y[i + time_steps])
+    return np.array(X_seq), np.array(y_seq)
+
+# GRU model creation function
+def create_gru_model(input_shape):
+    """
+    Create and compile GRU model
+    """
+    model = Sequential()
+    model.add(GRU(units=50, return_sequences=True, input_shape=input_shape))
+    model.add(Dropout(0.2))
+    model.add(GRU(units=50, return_sequences=False))
+    model.add(Dropout(0.2))
+    model.add(Dense(25))
+    model.add(Dense(1))
+    
+    model.compile(optimizer=Adam(learning_rate=0.001), loss='mean_squared_error')
+    return model
+
+# LSTM model creation function
+def create_lstm_model(input_shape):
+    """
+    Create and compile LSTM model
+    """
+    model = Sequential()
+    model.add(LSTM(units=50, return_sequences=True, input_shape=input_shape))
+    model.add(Dropout(0.2))
+    model.add(LSTM(units=50, return_sequences=False))
+    model.add(Dropout(0.2))
+    model.add(Dense(25))
+    model.add(Dense(1))
+    
+    model.compile(optimizer=Adam(learning_rate=0.001), loss='mean_squared_error')
+    return model
+
+
+
+
+
+
