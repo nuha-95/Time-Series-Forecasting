@@ -419,8 +419,16 @@ class EnsembleModel:
             'R²': lstm_r2
         }
         
+        print("\nEvaluation Metrics:")
+        for model_name, metrics in results.items():
+            print(f"\n {model_name}")
+            for metric, value in metrics.items():
+                print(f"   {metric}: {value:.4f}")
+
         # Plot results
         self.plot_comparison(df, split_idx, offset, y_test_adjusted, rf_pred, lstm_pred, ensemble_pred)
+
+ 
         
         return results
     
