@@ -51,28 +51,68 @@ Given historical **daily stock data** for Tesla, forecast the **closing price fo
 
 
 
-### 🧠 Model Development & Training
+Here's the **modified "Model Development & Training" section** of your README, now including **Prophet** with a short description and a plot placeholder:
 
-#### **Baseline Model**
+---
 
-* **Linear Regression**: Served as the initial benchmark to evaluate the performance of more complex models.
+## 🧠 Model Development & Training
 
-#### **Machine Learning Models**
+### **Baseline Model**
 
-* **Random Forest Regressor**: Captures non-linear relationships and handles feature importance effectively.
-* **XGBoost Regressor**: Optimized gradient boosting algorithm for improved accuracy and performance.
-* **Decision Tree Regressor**: A simple yet powerful tree-based model to understand feature splits.
-* **Support Vector Regressor (SVR)**: Useful for high-dimensional regression problems.
+* **Linear Regression**
+  Serves as the benchmark model for evaluating other complex methods. It assumes a linear relationship between features and target.
 
-#### **Deep Learning Models**
+---
 
-* **LSTM (Long Short-Term Memory)**: Captures long-term dependencies in sequential data.
-* **GRU (Gated Recurrent Unit)**: A lightweight alternative to LSTM with similar performance on time-series data.
+### **Machine Learning Models**
 
-#### **Ensemble Model**
+* **Random Forest Regressor**
+  Captures non-linear relationships through multiple decision trees and reduces overfitting via ensemble averaging.
 
-* **Hybrid Ensemble (LSTM + Random Forest)**: Combines the temporal learning capabilities of LSTM with the robust feature-based decision power of Random Forest for enhanced prediction accuracy.
+* **XGBoost Regressor**
+  A high-performance gradient boosting model known for speed and accuracy in regression tasks.
 
+* **Decision Tree Regressor**
+  A simple, interpretable tree-based model that splits data based on feature importance.
+
+* **Support Vector Regressor (SVR)**
+  Uses kernel methods to perform regression in high-dimensional space, useful for capturing complex trends.
+
+---
+
+### **Deep Learning Models**
+
+* **LSTM (Long Short-Term Memory)**
+  A type of recurrent neural network (RNN) ideal for capturing long-term dependencies in time series data.
+
+* **GRU (Gated Recurrent Unit)**
+  A simpler alternative to LSTM with fewer parameters, offering similar performance in sequence modeling.
+
+---
+
+### **Ensemble Model**
+
+* **Hybrid Ensemble (LSTM + Random Forest)**
+  Combines the sequential learning power of LSTM with the feature-based decision-making of Random Forest to boost accuracy.
+
+---
+
+### **Statistical Models**
+
+* **SARIMAX (Seasonal AutoRegressive Integrated Moving Average with eXogenous factors)**
+  A classical statistical model designed for time series forecasting, SARIMAX handles trend, seasonality, and incorporates external regressors (e.g., moving averages, momentum indicators). It's useful for interpretability and performance in more stable data segments.
+
+ <img width="1189" height="590" alt="output" src="https://github.com/user-attachments/assets/2c0dec2d-2e19-4390-b5cd-045240a7d0a7" />
+ 
+---
+
+
+### **Time Series Model**
+
+* **Prophet (by Facebook)**
+  A decomposable time series model that handles **seasonality**, **trends**, and **holidays**. Especially effective on business time series data with strong seasonal effects. It also allows inclusion of additional **regressors** to improve forecasting power.
+
+  <img width="1162" height="450" alt="newplot" src="https://github.com/user-attachments/assets/c07c6b5d-685f-4a2a-ad0d-a8ef79edaf0a" />
 
 
 ### 4. 📈 Evaluation & Optimization
@@ -88,16 +128,18 @@ Given historical **daily stock data** for Tesla, forecast the **closing price fo
 
 ## 📈 Results Summary
 
-| Model             | MAE   | RMSE  | R² Score |
-| ----------------- | ----- | ----- | -------- |
-| Linear Regression | 0.015 | 0.021 | 0.9714   |
-| Random Forest     | 0.022 | 0.029 | 0.9461   |
-| XGBoost           | 0.021 | 0.027 | 0.9505   |
-| Decision Tree     | 0.029 | 0.039 | 0.9024   |
-| SVR               | 0.030 | 0.036 | 0.9141   |
-| LSTM              | 0.035 | 0.043 | 0.8618   |
-| GRU               | 0.030 | 0.038 | 00.8959  |
-| Ensemble(LSTM+RF) | 0.022 | 0.029 | 0.9387   |
+| Model             | MAE     | RMSE    | R² Score |
+|------------------|---------|---------|----------|
+| Linear Regression | 0.015   | 0.021   | 0.9714   |
+| Random Forest     | 0.022   | 0.029   | 0.9461   |
+| XGBoost           | 0.021   | 0.027   | 0.9505   |
+| Decision Tree     | 0.029   | 0.039   | 0.9024   |
+| SVR               | 0.030   | 0.036   | 0.9141   |
+| LSTM              | 0.035   | 0.043   | 0.8618   |
+| GRU               | 0.030   | 0.038   | 0.8959   |
+| Ensemble (LSTM+RF)| 0.022   | 0.029   | 0.9387   |
+| **Prophet**       | 11.5816 | 15.0720 | 0.9100   |
+
 
 
 
