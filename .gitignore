@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+*.pkl
+*.joblib
+*.sav
+*.csv
+*.keras
+*.h5
