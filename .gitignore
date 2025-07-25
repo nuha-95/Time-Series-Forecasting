@@ -4,3 +4,5 @@ __pycache__/
 *.joblib
 *.sav
 *.csv
+*.keras
+*.h5
