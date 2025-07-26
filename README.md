@@ -55,6 +55,23 @@ Here's the **modified "Model Development & Training" section** of your README, n
 
 ---
 
+## 🧰 Setup & Testing
+
+`git clone https://github.com/nuha-95/Time-Series-Forecasting.git
+cd Time-Series-Forecasting`
+
+### 1. Install project dependencies
+
+`pip install -r requirements.txt`
+
+### 2. Run the forecasting pipeline
+
+`jupyter notebook Tesla_train.ipynb`
+
+### 3. Run unit tests
+
+`pytest tests/`
+
 ## 🧠 Model Development & Training
 
 ### **Baseline Model**
