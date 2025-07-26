@@ -56,9 +56,10 @@ Here's the **modified "Model Development & Training" section** of your README, n
 ---
 
 ## 🧰 Setup & Testing
-
-`git clone https://github.com/nuha-95/Time-Series-Forecasting.git`
-`cd Time-Series-Forecasting`
+```bash
+git clone https://github.com/nuha-95/Time-Series-Forecasting.git
+cd Time-Series-Forecasting
+```
 
 ### 1. Install project dependencies
 
